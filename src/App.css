@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'DynaBuff';
+  src: url('assets/fonts/DynaPuff-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'DynaBuff';
+  src: url('assets/fonts/DynaPuff-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'DynaBuff';
+  src: url('assets/fonts/DynaPuff-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap; 
+}
+
+@font-face {
+  font-family: 'DynaBuff';
+  src: url('assets/fonts/DynaPuff-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap; 
+}
+
+* {
+  font-family: 'DynaBuff';
+  overscroll-behavior: none;
+}
+
+.App {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+button {
+  background-color: white;
+  color: black;
+  font-size: 1.6vmin;
+  padding: 10px;
+  font-weight: 500;
+}

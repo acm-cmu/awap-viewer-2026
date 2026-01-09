@@ -1,0 +1,77 @@
+export type FoodName = "BUNS" | "MEAT" | "TOMATOES" | "LETTUCE";
+
+export type Food = {
+    type: "Food";
+    food_name: FoodName;
+    food_id: number;
+    chopped: boolean;
+    cooked_stage: 0 | 1 | 2
+}
+
+export type Plate = {
+    type: "Plate";
+    dirty: boolean;
+    food: Food[];
+}
+
+export type Order = {
+    order_id: number,
+    required: FoodName[];
+    created_turn: number;
+    expires_turn: number;
+    reward: number;
+    penalty: number;
+    claimed_by: null | number;
+    completed_turn: null | number;
+}
+
+export type Pan = {
+    type: "Pan";
+    food: null | Food
+}
+
+export type Item = Pan | Food | Plate;
+
+export interface BotInfo {
+    bot_id: number;
+    team: "RED" | "BLUE";
+    x: number;
+    y: number;
+    holding: null | Plate | Food;
+    map_team: "RED" | "BLUE";
+}
+
+export type TileName = "FLOOR" | "WALL" | "COUNTER" |"BOX" |"SINK" | "SINKTABLE"
+    | "COOKER" | "TRASH" | "SUBMIT" | "SHOP"
+
+export type MapTile = {
+    tile_name: TileName;
+    is_walkable: boolean;
+    item?: null | Item;
+    cook_progress?: number;
+    count?: number;
+    num_dirty_plates?: number;
+    curr_dirty_plate_progress?: number;
+    num_clean_plates?: number
+    using?: boolean;
+}
+
+export type Map = MapTile[][]
+
+export interface Turn {
+    turn: number;
+    team_money: {RED: number; BLUE: number};
+    bots: BotInfo[];
+    orders: {
+        RED: Order[];
+        BLUE: Order[];
+    };
+    red_map: Map;
+    blue_map: Map;
+}
+
+export interface Replay {
+  winner: string;
+  turns: number;
+  replay: Turn[];
+}
