@@ -1,7 +1,6 @@
 import type { TileName, MapTile } from "../../Types";
-import { useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/examples/jsm/Addons.js";
 import SliceFish from "../../assets/models/anchovies_Slice_Fish_0.glb";
+import { Gltf } from "@react-three/drei";
 
 type TileProps = {
   i: number;
@@ -10,10 +9,9 @@ type TileProps = {
 };
 
 const MapTile = (props: TileProps) => {
-  const gltf = useLoader(GLTFLoader, SliceFish)
   return (
     <group position={[0, 1, 0]} >
-      <primitive object={gltf.scene}></primitive>
+      <Gltf src={SliceFish} />
     </group>
   )
 }
