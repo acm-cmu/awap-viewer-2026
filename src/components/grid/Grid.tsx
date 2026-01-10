@@ -5,18 +5,14 @@ import { Mesh } from "three";
 type GridProps = {
   i: number;
   j: number;
+  side: "RED" | "BLUE"
 };
 
 const Grid = (props: GridProps) => {
-  const ref = useRef()
-  // delta is difference in time between frames
-  useFrame((state, delta) => {
-    // ref.current.rotation.x += delta
-  })
   return (
-    <mesh position={[1.01 * props.i,0, 1.01 * props.j]} ref={ref}>
-        <boxGeometry args={[1,1,1]}/>
-        <meshStandardMaterial color="#874e16"/>
+    <mesh position={[0.51 * props.i,0, 0.51 * props.j]}>
+        <boxGeometry args={[0.5,0.25,0.5]}/>
+        <meshStandardMaterial color={props.side == "RED" ? "#B85664" : "#4190D4"}/>
     </mesh>
   )
 }
