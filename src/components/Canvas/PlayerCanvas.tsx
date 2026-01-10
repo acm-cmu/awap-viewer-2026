@@ -58,7 +58,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
   return (
     <Canvas camera={{position: [0,8,11]}}>
       <OrbitControls />
-      <directionalLight position={[2, 4, 3]} intensity={1}/>
+      <directionalLight position={[2, 4, 3]} intensity={0.5}/>
       <ambientLight intensity={1}/>
       <>{grid}</>
       <>{plane}</>

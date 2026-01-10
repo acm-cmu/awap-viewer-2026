@@ -44,6 +44,15 @@ export interface BotInfo {
 export type TileName = "FLOOR" | "WALL" | "COUNTER" |"BOX" |"SINK" | "SINKTABLE"
     | "COOKER" | "TRASH" | "SUBMIT" | "SHOP"
 
+export type TileInfoType = {
+    "SHOP" : {
+        src: string
+        scaleX: number
+        scaleZ: number
+        scaleY: number
+    }
+}
+
 export type MapTile = {
     tile_name: TileName;
     is_walkable: boolean;

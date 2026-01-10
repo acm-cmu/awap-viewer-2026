@@ -1,6 +1,7 @@
 import type { TileName, MapTile } from "../../Types";
-import SliceFish from "../../assets/models/Egg.glb";
 import { Gltf } from "@react-three/drei";
+// import Shop from "../../assets/models/shop.glb";
+import { TileInfo } from "./MapTileConst";
 
 type TileProps = {
   i: number;
@@ -10,8 +11,12 @@ type TileProps = {
 
 const MapTile = (props: TileProps) => {
   return (
-    <group position={[0, 1, 0]} >
-      <Gltf src={SliceFish} />
+    <group position={[0, 0.25, 0]} >
+      <Gltf 
+        src={TileInfo["SHOP"].src} 
+        scale-x={TileInfo["SHOP"].scaleX} 
+        scale-y={TileInfo["SHOP"].scaleY}
+        scale-z={TileInfo["SHOP"].scaleZ}  />
     </group>
   )
 }
