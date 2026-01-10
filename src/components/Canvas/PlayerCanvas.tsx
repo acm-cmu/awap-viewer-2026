@@ -5,6 +5,8 @@ import Grid from '../grid/Grid';
 import { useContext } from 'react';
 import { ViewerStateContext } from '../Pages/Viewer';
 import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
+import MapTile from '../grid/MapTile';
 
 interface CanvasType {
   side: "RED" | "BLUE"
@@ -63,7 +65,10 @@ const PlayerCanvas = ({side} : CanvasType) => {
       <mesh position={[0, 0, 0]}>
         <boxGeometry args={[0.1,5,0.1]}/>
         <meshStandardMaterial color={side == "RED" ? "#8F3441" : "#2E6AA6"}/>
-      </mesh>)
+      </mesh>
+      <Suspense>
+        <MapTile i={0} j={0} side="RED"></MapTile>
+      </Suspense>
     </Canvas>
   )
 }
