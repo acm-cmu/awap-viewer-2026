@@ -1,5 +1,5 @@
 import type { TileName, MapTile } from "../../Types";
-import SliceFish from "../../assets/models/anchovies_Slice_Fish_0.glb";
+import SliceFish from "../../assets/models/Egg.glb";
 import { Gltf } from "@react-three/drei";
 
 type TileProps = {
