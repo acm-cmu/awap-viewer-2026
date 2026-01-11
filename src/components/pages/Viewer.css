@@ -58,3 +58,34 @@
         background-position: 50% 1200px;
     }
 }
+
+/* Credit Page */
+
+.credit-screen {
+    background-color: rgba(0,0,0,0.9);
+    height: 100vh;
+    position: absolute;
+    width: 100vw;
+    z-index: 20;
+}
+
+.credit-screen-inner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: top;
+    margin: 50px;
+}
+
+.credit-screen h1 {
+    font-size: xx-large;
+}
+
+.credit-screen .toggle-credit-screen {
+    position: absolute;
+    font-size: 15px;
+    padding: 5px;
+    top: 15px;
+    right: 20px;
+}

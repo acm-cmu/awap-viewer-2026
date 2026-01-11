@@ -51,13 +51,17 @@ span {
     margin: 10px;
 }
 
+button {
+    margin: 5px;
+}
+
 /* File upload button */
 .file-upload {
     background: black;
     border: 2px solid white;
     border-radius: 5px;
     font-size: 1.6vmin;
-    margin: 10px;
+    margin: 5px;
     width: 50%;
 }
 

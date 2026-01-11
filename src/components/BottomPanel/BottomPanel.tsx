@@ -59,6 +59,7 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
           <div className="container-grid">
             <div className="container-left">
               <button>Play</button>
+              <button onClick={() => actionContext.setShowCreditScreen(true)}>Credits</button>
             </div>
             <div className="container-center">
               <span>Frame {stateContext.round + 1} of {stateContext.replay.turns}</span>
