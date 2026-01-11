@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import { ViewerStateContext } from '../Pages/Viewer';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
-import MapTile from '../grid/MapTile';
+import MapTileModel from '../grid/MapTileModel';
 
 interface CanvasType {
   side: "RED" | "BLUE"
@@ -67,7 +67,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
         <meshStandardMaterial color={side == "RED" ? "#8F3441" : "#2E6AA6"}/>
       </mesh> */}
       <Suspense>
-        <MapTile i={0} j={0} side="RED"></MapTile>
+        <MapTileModel i={0} j={0} side="RED"></MapTileModel>
       </Suspense>
     </Canvas>
   )

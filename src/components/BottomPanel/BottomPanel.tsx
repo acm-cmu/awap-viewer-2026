@@ -83,7 +83,7 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
             <input id="fileobj" type="file" className="file-upload file-upload-small" onChange={showFile} />
           </div>
           {wrongFile ? (
-            <h2 className="info">Please upload replay files with .awap26r extensions only. </h2>
+            <h2 className="info">Please upload replay files with the correct extensions only. </h2>
           ) : (
             <div></div>
           )}

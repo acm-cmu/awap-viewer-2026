@@ -9,7 +9,7 @@ type TileProps = {
   side: "RED" | "BLUE"
 };
 
-const MapTile = (props: TileProps) => {
+const MapTileModel = (props: TileProps) => {
   return (
     <group position={[0, 0.25, 0]} >
       <Gltf 
@@ -21,4 +21,4 @@ const MapTile = (props: TileProps) => {
   )
 }
 
-export default MapTile
+export default MapTileModel
