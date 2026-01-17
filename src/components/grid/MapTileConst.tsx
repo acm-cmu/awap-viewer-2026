@@ -10,7 +10,7 @@ import BlueCube from "../../assets/models/blue_cube.glb";
 import RedFloor from "../../assets/models/floor.glb";
 import BlueFloor from "../../assets/models/floor_blue.glb";
 import Trashcan from "../../assets/models/trashcan.glb";
-import SinkTable from "../../assets/models/kitchen_table.glb";
+import SinkTable from "../../assets/models/sink_table.glb";
 import Box from "../../assets/models/stylized_wooden_crate.glb";
 
 import RedCat from "../../assets/models/cat.glb";
@@ -84,9 +84,9 @@ export const TileInfo : TileInfoType = {
     "SINKTABLE": {
         redSrc:SinkTable,
         blueSrc: SinkTable,
-        scaleX: 9.5,
-        scaleZ: 9.5,
-        scaleY: 12.5,
+        scaleX: 0.25,
+        scaleZ: 0.25,
+        scaleY: 0.3,
         yOffset: -0.12,
         rotationY: 0
     },
