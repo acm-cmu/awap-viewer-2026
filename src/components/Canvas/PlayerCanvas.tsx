@@ -15,7 +15,7 @@ interface CanvasType {
 
 const PlayerCanvas = ({side} : CanvasType) => {
   const stateContext = useContext(ViewerStateContext);
-  const [hideWalls, setHideWalls] = useState<boolean>(false);
+  const [hideWalls, setHideWalls] = useState<boolean>(true);
       
   if (!stateContext) {
     throw new Error('useViewer must be used within a ViewerProvider');
@@ -110,10 +110,6 @@ const PlayerCanvas = ({side} : CanvasType) => {
           <ambientLight intensity={1}/>
           <>{grid}</>
           <>{plane}</>
-          {/* <mesh position={[0, 0, 0]}>
-            <boxGeometry args={[0.1,5,0.1]}/>
-            <meshStandardMaterial color={side == "RED" ? "#8F3441" : "#2E6AA6"}/>
-          </mesh> */}
           <Suspense>
             {tiles} 
           </Suspense>

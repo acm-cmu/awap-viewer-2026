@@ -63,7 +63,7 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
       } else {
         actionContext.setIsPlaying(false);
       }
-    }, 500);
+    }, 50);
 
     return () => clearTimeout(timeout);
   }, [stateContext.round, stateContext.isPlaying]);

@@ -7,6 +7,8 @@ import RedFlag from "../../assets/models/flag.glb";
 import BlueFlag from "../../assets/models/blue_flag.glb";
 import RedCube from "../../assets/models/cube.glb";
 import BlueCube from "../../assets/models/blue_cube.glb";
+import RedFloor from "../../assets/models/floor.glb";
+import BlueFloor from "../../assets/models/floor_blue.glb";
 import Trashcan from "../../assets/models/trashcan.glb";
 import SinkTable from "../../assets/models/kitchen_table.glb";
 import Box from "../../assets/models/stylized_wooden_crate.glb";
@@ -98,12 +100,12 @@ export const TileInfo : TileInfoType = {
         rotationY: 0
     },
     "FLOOR": {
-        redSrc:"",
-        blueSrc: "",
-        scaleX: 0,
-        scaleZ: 0,
-        scaleY: 0,
-        yOffset: 0,
+        redSrc: RedFloor,
+        blueSrc: BlueFloor,
+        scaleX: 0.5,
+        scaleZ: 0.51,
+        scaleY: 0.2,
+        yOffset: -0.11,
         rotationY: 0
     },
     "BOT": {
