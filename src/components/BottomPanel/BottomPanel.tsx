@@ -1,5 +1,5 @@
 import "./BottomPanel.css"
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect, act } from "react";
 import { ViewerActionContext, ViewerStateContext } from "../Pages/Viewer";
 import type { Replay } from "../../Types";
 
@@ -51,6 +51,22 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
   const handleTurnChange = (i : number) => {
     actionContext.setRound(i);
   }
+
+  useEffect(() => {
+    if (!stateContext.isPlaying) return;
+
+    const timeout = setTimeout(() => {
+      if (!stateContext.replay) return;
+
+      if (stateContext.round + 1 < stateContext.replay.turns) {
+        actionContext.setRound(stateContext.round + 1);
+      } else {
+        actionContext.setIsPlaying(false);
+      }
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [stateContext.round, stateContext.isPlaying]);
   
   return (
     <div className="container flex-column full-height">
@@ -58,7 +74,9 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
         <>
           <div className="container-grid">
             <div className="container-left">
-              <button>Play</button>
+              <button onClick={() => actionContext.setIsPlaying(!stateContext.isPlaying)}>
+                {stateContext.isPlaying ? "Stop" : "Play"}
+              </button>
               <button onClick={() => actionContext.setShowCreditScreen(true)}>Credits</button>
             </div>
             <div className="container-center">
