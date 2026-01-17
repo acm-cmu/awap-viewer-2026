@@ -18,5 +18,44 @@ import PAN from "../../assets/models/Burnt_Egg.glb";
 import BLUE_BOWL from "../../assets/models/food/blue_bowl.glb";
 import RED_BOWL from "../../assets/models/food/red_bowl.glb";
 
+export const FoodTileInfo = {
+    "SAUCE" : {
+        src: SAUCE,
+        scaleX: 0.15,
+        scaleZ: 0.09,
+        scaleY: 0.2,
+        yOffset: 0.07
+    }
+}
+
+export const PlateInfo = {
+    "PLATE" : {
+        redSrc: RED_BOWL,
+        blueSrc: BLUE_BOWL,
+        scaleX: 0.15,
+        scaleZ: 0.09,
+        scaleY: 0.2,
+        yOffset: 0.07,
+        placeOffset: 0.2,
+        rotation: 0
+    },
+    "PAN" : {
+        redSrc: PAN,
+        blueSrc: PAN,
+        scaleX: 0.15,
+        scaleZ: 0.09,
+        scaleY: 0.2,
+        yOffset: 0.1,
+        placeOffset: 0.2,
+        rotation: 0
+    }
+}
 
 
+Object.keys(FoodTileInfo).forEach((tile) => {
+    useGLTF.preload(FoodTileInfo[tile].src);
+});
+
+useGLTF.preload(PAN);
+useGLTF.preload(RED_BOWL);
+useGLTF.preload(BLUE_BOWL);

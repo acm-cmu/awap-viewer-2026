@@ -43,15 +43,21 @@ const PlayerCanvas = ({side} : CanvasType) => {
       }
     }
     return [tempArr];
-  }, [stateContext.replay])
+  }, [stateContext.replay]);
+
+  const gaps = useMemo(() => {
+    const w_gap = (map.length * 0.51 - 0.02) / 2;
+    const h_gap = (map[0].length * 0.51 - 0.02) / 2;
+    return [w_gap, h_gap]
+  }, [stateContext.replay]);
 
   const plane = useMemo(() => {
     const width = (map.length * 0.51 - 0.02) * 1.1;
-    const w_gap = (map.length * 0.51 - 0.02) / 2 - 0.25;
+    
     const height = (map[0].length * 0.51 - 0.02) * 1.2;
-    const h_gap = (map[0].length * 0.51 - 0.02) / 2 - 0.25;
+
     return (
-      <mesh position={[w_gap, -0.15, h_gap]}>
+      <mesh position={[gaps[0] - 0.25, -0.15, gaps[1] - 0.25]}>
         <boxGeometry args={[width,0.05,height]}/>
         <meshStandardMaterial color={side == "RED" ? "#8F3441" : "#2E6AA6"}/>
       </mesh>)
@@ -104,18 +110,20 @@ const PlayerCanvas = ({side} : CanvasType) => {
         {hideWalls ? "Show Walls" : "Hide Walls"}
         </button>
       
-        <Canvas camera={{position: [0,8,11]}}>
+        <Canvas camera={{position: [0,8,0]}}>
           <OrbitControls />
           <directionalLight position={[2, 4, 3]} intensity={0.5}/>
           <ambientLight intensity={1}/>
-          <>{grid}</>
-          <>{plane}</>
-          <Suspense>
-            {tiles} 
-          </Suspense>
-          <Suspense>
-            {bots}
-          </Suspense>
+          <group position={[-gaps[0], 0, -gaps[1]]}>
+            <>{grid}</>
+            <>{plane}</>
+            <Suspense>
+              {tiles} 
+            </Suspense>
+            <Suspense>
+              {bots}
+            </Suspense>
+          </group>
         </Canvas>
       </div>
     </>
