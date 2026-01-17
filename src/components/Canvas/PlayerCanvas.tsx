@@ -113,7 +113,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
         <Canvas camera={{position: [0,8,0]}}>
           <OrbitControls />
           <directionalLight position={[2, 4, 3]} intensity={0.5}/>
-          <ambientLight intensity={1}/>
+          <ambientLight color={"white"} intensity={1}/>
           <group position={[-gaps[0], 0, -gaps[1]]}>
             <>{grid}</>
             <>{plane}</>

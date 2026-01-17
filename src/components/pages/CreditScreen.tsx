@@ -13,7 +13,7 @@ const CreditScreen = () => {
             <div className="credit-screen-inner">
                 <h1>The following Models were used in creation of this viewer:</h1>
                 <ul>
-                    <li>"Small Shop" (https://skfb.ly/oYZYO) by Kacang Garing is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</li>
+                    <li>"Vegetable Market" (https://skfb.ly/oPHyE) by anastasiaremezova is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</li>
                     <li>"Basic Sink" (https://skfb.ly/XNDo) by rustbucket is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</li>
                     <li>"Low-Poly 3D Small Flag" (https://skfb.ly/prS7t) by Produk Cerdas is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</li>               
                     <li>"trash_garbage Poubelle" (https://skfb.ly/oBTGD) by taute is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</li>

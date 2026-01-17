@@ -1,5 +1,5 @@
 import { useGLTF } from "@react-three/drei";
-import Shop from "../../assets/models/shop.glb";
+import Shop from "../../assets/models/shop2.glb";
 import Cooker from "../../assets/models/cooker.glb";
 import Counter from "../../assets/models/counter.glb";
 import Sink from "../../assets/models/basic_sink.glb";
@@ -21,11 +21,11 @@ export const TileInfo : TileInfoType = {
     "SHOP": {
         redSrc: Shop,
         blueSrc: Shop,
-        scaleX: 0.15,
-        scaleZ: 0.09,
-        scaleY: 0.2,
-        yOffset: 0.07,
-        rotationY: -90
+        scaleX: 0.18,
+        scaleZ: 0.25,
+        scaleY: 0.18,
+        yOffset: -0.12,
+        rotationY: 0
     },
     "COOKER": {
         redSrc: Cooker,
