@@ -44,7 +44,7 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
   };
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event.target.value)
+    // console.log(event.target.value)
     handleTurnChange(parseInt(event.target.value))
   }
     

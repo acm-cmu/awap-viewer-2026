@@ -1,0 +1,13 @@
+.canvas-controls {   
+    position: absolute;
+    margin-left: 10px;
+    top: 27vh;
+    z-index: 10;
+}
+
+button.canvas-controls {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 15px;
+}

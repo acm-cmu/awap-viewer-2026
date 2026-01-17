@@ -8,10 +8,12 @@ type TileProps = {
   j: number;
   side: "RED" | "BLUE"
   type: TileName
+  hideWalls: boolean
 };
 const test = "COUNTER"
 const MapTileModel = (props: TileProps) => {
   return (
+    props.type == "FLOOR" || (props.hideWalls && props.type == "WALL") ? <></> :
     <group position={[0.51 * props.i, 0.25 + TileInfo[props.type].yOffset, 0.51 * props.j] } >
       <Gltf 
         src={props.side == "RED" ? TileInfo[props.type].redSrc : TileInfo[props.type].blueSrc} 

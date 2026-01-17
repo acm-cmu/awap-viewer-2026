@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { OrbitControls } from '@react-three/drei'
 import Grid from '../grid/Grid';
 import { useContext } from 'react';
@@ -7,6 +7,7 @@ import { ViewerStateContext } from '../Pages/Viewer';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import MapTileModel from '../grid/MapTileModel';
+import "./PlayCanvas.css"
 
 interface CanvasType {
   side: "RED" | "BLUE"
@@ -14,6 +15,7 @@ interface CanvasType {
 
 const PlayerCanvas = ({side} : CanvasType) => {
   const stateContext = useContext(ViewerStateContext);
+  const [hideWalls, setHideWalls] = useState<boolean>(false);
       
   if (!stateContext) {
     throw new Error('useViewer must be used within a ViewerProvider');
@@ -55,22 +57,48 @@ const PlayerCanvas = ({side} : CanvasType) => {
       </mesh>)
   }, [stateContext.replay])
 
+  const tiles = useMemo(() => {
+    const tempArr: ReactNode[][] = []
+    // Basic Map
+    for (let row = 0; row < map.length; row++) {
+      tempArr.push([] as ReactNode[]);
+      for (let col = 0; col < map[0].length; col++) {
+        tempArr[row]?.push(
+          (
+            <MapTileModel i={row} j={col} side={side} 
+                          type={map[row][col].tile_name}
+                          hideWalls={hideWalls}
+                          ></MapTileModel>
+          ) as ReactNode
+        );
+      }
+    }
+    return [tempArr];
+  }, [turnInfo, hideWalls])
+
   return (
-    <Canvas camera={{position: [0,8,11]}}>
-      <OrbitControls />
-      <directionalLight position={[2, 4, 3]} intensity={0.5}/>
-      <ambientLight intensity={1}/>
-      <>{grid}</>
-      <>{plane}</>
-      {/* <mesh position={[0, 0, 0]}>
-        <boxGeometry args={[0.1,5,0.1]}/>
-        <meshStandardMaterial color={side == "RED" ? "#8F3441" : "#2E6AA6"}/>
-      </mesh> */}
-      <Suspense>
-        <MapTileModel i={0} j={0} side={side} type='COUNTER'></MapTileModel>
-        <MapTileModel i={1} j={0} side={side} type='BOX'></MapTileModel>
-      </Suspense>
-    </Canvas>
+    <>
+      <div className='canvas-controls-container'>
+        <button className='canvas-controls' onClick={() => setHideWalls(!hideWalls)} >
+        {hideWalls ? "Show Walls" : "Hide Walls"}
+        </button>
+      
+        <Canvas camera={{position: [0,8,11]}}>
+          <OrbitControls />
+          <directionalLight position={[2, 4, 3]} intensity={0.5}/>
+          <ambientLight intensity={1}/>
+          <>{grid}</>
+          <>{plane}</>
+          {/* <mesh position={[0, 0, 0]}>
+            <boxGeometry args={[0.1,5,0.1]}/>
+            <meshStandardMaterial color={side == "RED" ? "#8F3441" : "#2E6AA6"}/>
+          </mesh> */}
+          <Suspense>
+            {tiles} 
+          </Suspense>
+        </Canvas>
+      </div>
+    </>
   )
 }
 

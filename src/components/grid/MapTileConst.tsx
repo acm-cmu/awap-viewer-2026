@@ -16,7 +16,7 @@ export const TileInfo : TileInfoType = {
     "SHOP": {
         redSrc: Shop,
         blueSrc: Shop,
-        scaleX: 0.21,
+        scaleX: 0.15,
         scaleZ: 0.09,
         scaleY: 0.2,
         yOffset: 0.07,
