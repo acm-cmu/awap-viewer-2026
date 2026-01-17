@@ -67,7 +67,8 @@ const PlayerCanvas = ({side} : CanvasType) => {
         <meshStandardMaterial color={side == "RED" ? "#8F3441" : "#2E6AA6"}/>
       </mesh> */}
       <Suspense>
-        <MapTileModel i={0} j={0} side="RED"></MapTileModel>
+        <MapTileModel i={0} j={0} side={side} type='COUNTER'></MapTileModel>
+        <MapTileModel i={1} j={0} side={side} type='BOX'></MapTileModel>
       </Suspense>
     </Canvas>
   )

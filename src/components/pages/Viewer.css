@@ -49,6 +49,10 @@
     animation: scroll 12s linear infinite backwards;
 }
 
+.loading h1 {
+    color: black;
+}
+
 @keyframes scroll {
     0% {
         background-position: 50% 0;

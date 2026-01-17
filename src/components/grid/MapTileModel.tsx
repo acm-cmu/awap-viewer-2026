@@ -7,16 +7,19 @@ type TileProps = {
   i: number;
   j: number;
   side: "RED" | "BLUE"
+  type: TileName
 };
-
+const test = "COUNTER"
 const MapTileModel = (props: TileProps) => {
   return (
-    <group position={[0, 0.25, 0]} >
+    <group position={[0.51 * props.i, 0.25 + TileInfo[props.type].yOffset, 0.51 * props.j] } >
       <Gltf 
-        src={TileInfo["SHOP"].src} 
-        scale-x={TileInfo["SHOP"].scaleX} 
-        scale-y={TileInfo["SHOP"].scaleY}
-        scale-z={TileInfo["SHOP"].scaleZ}  />
+        src={props.side == "RED" ? TileInfo[props.type].redSrc : TileInfo[props.type].blueSrc} 
+        scale-x={TileInfo[props.type].scaleX} 
+        scale-y={TileInfo[props.type].scaleY}
+        scale-z={TileInfo[props.type].scaleZ}
+        rotation={[0,TileInfo[props.type].rotationY * Math.PI / 180,0]}
+         />
     </group>
   )
 }

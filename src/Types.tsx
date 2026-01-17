@@ -43,16 +43,28 @@ export interface BotInfo {
 
 export type TileName = "FLOOR" | "WALL" | "COUNTER" |"BOX" |"SINK" | "SINKTABLE"
     | "COOKER" | "TRASH" | "SUBMIT" | "SHOP"
-
-// might need to add for counter, dist above ground(for placing food)
-export type TileInfoType = {
-    "SHOP" : {
-        src: string
+export type TileProperties = 
+{
+        redSrc: string
+        blueSrc: string
         scaleX: number
         scaleZ: number
         scaleY: number
-    }
+        yOffset: number
+        rotationY: number
 }
+
+export type TileInfoType = Record<TileName, TileProperties>
+// export type TileInfoType = {
+//     "SHOP"| "COOKER"| "SINK" : {
+//         src: string
+//         scaleX: number
+//         scaleZ: number
+//         scaleY: number
+//         yOffset: number
+//         rotationY: number
+//     }
+// }
 
 export type MapTile = {
     tile_name: TileName;
