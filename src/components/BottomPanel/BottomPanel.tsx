@@ -1,6 +1,6 @@
 import "./BottomPanel.css"
 import { useState, useContext, useEffect, act } from "react";
-import { ViewerActionContext, ViewerStateContext } from "../Pages/Viewer";
+import { ViewerActionContext, ViewerStateContext } from "../pages/Viewer";
 import type { Replay } from "../../Types";
 
 type TogglePageType = {

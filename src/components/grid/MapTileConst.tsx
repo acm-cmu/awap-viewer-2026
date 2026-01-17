@@ -10,6 +10,9 @@ import BlueCube from "../../assets/models/blue_cube.glb";
 import Trashcan from "../../assets/models/trashcan.glb";
 import SinkTable from "../../assets/models/kitchen_table.glb";
 import Box from "../../assets/models/stylized_wooden_crate.glb";
+
+import RedCat from "../../assets/models/cat.glb";
+import BlueCat from "../../assets/models/cat_blue.glb";
 import type { TileInfoType } from "../../Types";
 
 export const TileInfo : TileInfoType = {
@@ -93,6 +96,24 @@ export const TileInfo : TileInfoType = {
         scaleY: 0.19,
         yOffset: -0.12,
         rotationY: 0
+    },
+    "FLOOR": {
+        redSrc:"",
+        blueSrc: "",
+        scaleX: 0,
+        scaleZ: 0,
+        scaleY: 0,
+        yOffset: 0,
+        rotationY: 0
+    },
+    "BOT": {
+        redSrc: RedCat,
+        blueSrc: BlueCat,
+        scaleX: 0.22,
+        scaleZ: 0.22,
+        scaleY: 0.25,
+        yOffset: 0.15,
+        rotationY: 90
     }
 }
 

@@ -1,6 +1,6 @@
 import '../TopStats/TopStats.css'
 import { useContext, useMemo } from 'react';
-import {ViewerStateContext } from "../Pages/Viewer";
+import {ViewerStateContext } from "../pages/Viewer";
 
 
 const TopStats = () => {

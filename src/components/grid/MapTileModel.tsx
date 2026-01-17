@@ -1,4 +1,4 @@
-import type { TileName, MapTile } from "../../Types";
+import type { ModelName, MapTile } from "../../Types";
 import { Gltf } from "@react-three/drei";
 // import Shop from "../../assets/models/shop.glb";
 import { TileInfo } from "./MapTileConst";
@@ -7,10 +7,10 @@ type TileProps = {
   i: number;
   j: number;
   side: "RED" | "BLUE"
-  type: TileName
+  type: ModelName
   hideWalls: boolean
 };
-const test = "COUNTER"
+
 const MapTileModel = (props: TileProps) => {
   return (
     props.type == "FLOOR" || (props.hideWalls && props.type == "WALL") ? <></> :

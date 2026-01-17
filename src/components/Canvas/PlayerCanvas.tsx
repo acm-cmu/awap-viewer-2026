@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { OrbitControls } from '@react-three/drei'
 import Grid from '../grid/Grid';
 import { useContext } from 'react';
-import { ViewerStateContext } from '../Pages/Viewer';
+import { ViewerStateContext } from '../pages/Viewer';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import MapTileModel from '../grid/MapTileModel';
@@ -76,6 +76,27 @@ const PlayerCanvas = ({side} : CanvasType) => {
     return [tempArr];
   }, [turnInfo, hideWalls])
 
+  const bots = useMemo(() => {
+    const tempArr: ReactNode[] = []
+    // Basic Map
+    console.log(turnInfo.bots)
+    for (let k = 0; k < turnInfo.bots.length; k++) {
+      console.log(turnInfo.bots[k])
+      if (turnInfo.bots[k].map_team == side) {
+          tempArr.push(
+          (
+            <MapTileModel i={turnInfo.bots[k].x} j={turnInfo.bots[k].y} 
+                          side={turnInfo.bots[k].team} 
+                          type={"BOT"}
+                          hideWalls={hideWalls}
+                          ></MapTileModel>
+          ) as ReactNode
+        );
+      }
+    }
+    return [tempArr];
+  }, [turnInfo])
+
   return (
     <>
       <div className='canvas-controls-container'>
@@ -95,6 +116,9 @@ const PlayerCanvas = ({side} : CanvasType) => {
           </mesh> */}
           <Suspense>
             {tiles} 
+          </Suspense>
+          <Suspense>
+            {bots}
           </Suspense>
         </Canvas>
       </div>

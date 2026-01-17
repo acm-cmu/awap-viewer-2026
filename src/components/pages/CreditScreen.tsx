@@ -1,4 +1,4 @@
-import { ViewerActionContext } from "../Pages/Viewer";
+import { ViewerActionContext } from "./Viewer";
 import { useContext } from "react";
 
 const CreditScreen = () => {

@@ -1,4 +1,4 @@
-export type FoodName = "BUNS" | "MEAT" | "TOMATOES" | "LETTUCE";
+export type FoodName = "EGG" | "ONIONS" | "MEAT" | "NOODLES" | "SAUCES";
 
 export type Food = {
     type: "Food";
@@ -43,6 +43,9 @@ export interface BotInfo {
 
 export type TileName = "FLOOR" | "WALL" | "COUNTER" |"BOX" |"SINK" | "SINKTABLE"
     | "COOKER" | "TRASH" | "SUBMIT" | "SHOP"
+
+export type ModelName = TileName | "BOT"
+
 export type TileProperties = 
 {
         redSrc: string
@@ -54,17 +57,7 @@ export type TileProperties =
         rotationY: number
 }
 
-export type TileInfoType = Record<TileName, TileProperties>
-// export type TileInfoType = {
-//     "SHOP"| "COOKER"| "SINK" : {
-//         src: string
-//         scaleX: number
-//         scaleZ: number
-//         scaleY: number
-//         yOffset: number
-//         rotationY: number
-//     }
-// }
+export type TileInfoType = Record<ModelName, TileProperties>
 
 export type MapTile = {
     tile_name: TileName;

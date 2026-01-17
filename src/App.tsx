@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './App.css';
-import Viewer from './components/Pages/Viewer'
-import MapMaker from './components/Pages/MapMaker'
+import Viewer from './components/pages/Viewer'
+import MapMaker from './components/pages/MapMaker'
 
 function App() {
   const [page, setPage] = React.useState<'viewer' | 'mapmaker'>('viewer');
