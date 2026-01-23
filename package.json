@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "http://www.acmatcmu.com/awap-viewer-2026",
+  "homepage": "http://www.acmatcmu.com/awap-viewer-2026/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
