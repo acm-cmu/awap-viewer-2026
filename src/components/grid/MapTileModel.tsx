@@ -1,4 +1,4 @@
-import type { ModelName, MapTile } from "../../Types";
+import type { ModelName } from "../../Types";
 import { Gltf } from "@react-three/drei";
 // import Shop from "../../assets/models/shop.glb";
 import { TileInfo } from "./MapTileConst";

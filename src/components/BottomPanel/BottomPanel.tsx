@@ -1,5 +1,5 @@
 import "./BottomPanel.css"
-import { useState, useContext, useEffect, act } from "react";
+import { useState, useContext, useEffect } from "react";
 import { ViewerActionContext, ViewerStateContext } from "../pages/Viewer";
 import type { Replay } from "../../Types";
 

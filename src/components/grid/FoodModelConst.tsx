@@ -1,18 +1,18 @@
 import { useGLTF } from "@react-three/drei";
 import SAUCE from "../../assets/models/food/BBQ_Sauce.glb";
-import NOODLE from "../../assets/models/food/noodle.glb";
-import RAW_EGG from "../../assets/models/food/Raw_Egg.glb";
-import COOKED_EGG from "../../assets/models/food/Egg.glb";
-import BURNT_EGG from "../../assets/models/food/Egg.glb";
-import ONION from "../../assets/models/food/green_onion.glb";
-import CHOPPED_ONION from "../../assets/models/food/chopped_onions.glb";
+// import NOODLE from "../../assets/models/food/noodle.glb";
+// import RAW_EGG from "../../assets/models/food/Raw_Egg.glb";
+// import COOKED_EGG from "../../assets/models/food/Egg.glb";
+// import BURNT_EGG from "../../assets/models/food/Egg.glb";
+// import ONION from "../../assets/models/food/green_onion.glb";
+// import CHOPPED_ONION from "../../assets/models/food/chopped_onions.glb";
 
-import RAW_MEAT_U from "../../assets/models/food/Raw_Meat.glb";
-import COOKED_MEAT_U from "../../assets/models/food/cooked_meat.glb";
-import BURNT_MEAT_U from "../../assets/models/food/burnt_meat.glb";
-import RAW_MEAT_C from "../../assets/models/food/raw_meat_C.glb";
-import COOKED_MEAT_C from "../../assets/models/food/cooked_meat_C.glb";
-import BURNT_MEAT_C from "../../assets/models/food/burnt_meat_C.glb";
+// import RAW_MEAT_U from "../../assets/models/food/Raw_Meat.glb";
+// import COOKED_MEAT_U from "../../assets/models/food/cooked_meat.glb";
+// import BURNT_MEAT_U from "../../assets/models/food/burnt_meat.glb";
+// import RAW_MEAT_C from "../../assets/models/food/raw_meat_C.glb";
+// import COOKED_MEAT_C from "../../assets/models/food/cooked_meat_C.glb";
+// import BURNT_MEAT_C from "../../assets/models/food/burnt_meat_C.glb";
 
 import PAN from "../../assets/models/Burnt_Egg.glb";
 import BLUE_BOWL from "../../assets/models/food/blue_bowl.glb";
@@ -26,7 +26,7 @@ export const FoodTileInfo = {
         scaleY: 0.2,
         yOffset: 0.07
     }
-}
+} as const
 
 export const PlateInfo = {
     "PLATE" : {
@@ -52,10 +52,11 @@ export const PlateInfo = {
 }
 
 
-Object.keys(FoodTileInfo).forEach((tile) => {
-    useGLTF.preload(FoodTileInfo[tile].src);
-});
+// Object.keys(FoodTileInfo).forEach((tile) => {
+//     useGLTF.preload(FoodTileInfo[tile].src);
+// });
 
 useGLTF.preload(PAN);
 useGLTF.preload(RED_BOWL);
 useGLTF.preload(BLUE_BOWL);
+useGLTF.preload(SAUCE);

@@ -11,8 +11,8 @@ const ViewerReplay = ({togglePage} : TogglePageType) => {
     <div className='layout'>
         <div className='layout-top'></div>
         <div className='layout-center'>
-            <PlayerCanvas></PlayerCanvas>
-            <PlayerCanvas></PlayerCanvas>
+            <PlayerCanvas side='RED'></PlayerCanvas>
+            <PlayerCanvas side='BLUE'></PlayerCanvas>
         </div>
         <div className='layout-bottom'>
             <BottomPanel togglePage={togglePage}></BottomPanel>    

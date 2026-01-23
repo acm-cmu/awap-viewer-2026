@@ -117,11 +117,26 @@ export const TileInfo : TileInfoType = {
         yOffset: 0.15,
         rotationY: 90
     }
-}
+} as const
 
-Object.keys(TileInfo).forEach((tile) => {
-    useGLTF.preload(TileInfo[tile].redSrc);
-    if (TileInfo[tile].blueSrc != TileInfo[tile].redSrc) {
-        useGLTF.preload(TileInfo[tile].blueSrc);
-    }
-});
+// Object.keys(TileInfo).forEach((tile) => {
+//     useGLTF.preload(TileInfo[tile].redSrc);
+//     if (TileInfo[tile].blueSrc != TileInfo[tile].redSrc) {
+//         useGLTF.preload(TileInfo[tile].blueSrc);
+//     }
+// });
+useGLTF.preload(Shop);
+useGLTF.preload(Cooker);
+useGLTF.preload(Counter);
+useGLTF.preload(Sink);
+useGLTF.preload(RedFlag);
+useGLTF.preload(BlueFlag);
+useGLTF.preload(RedCube);
+useGLTF.preload(BlueCube);
+useGLTF.preload(RedFloor);
+useGLTF.preload(BlueFloor);
+useGLTF.preload(Trashcan);
+useGLTF.preload(SinkTable);
+useGLTF.preload(Box);
+useGLTF.preload(RedCat);
+useGLTF.preload(BlueCat);
