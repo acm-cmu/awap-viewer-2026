@@ -5,6 +5,8 @@ import BottomPanel from '../BottomPanel/BottomPanel';
 import PlayerCanvas from '../Canvas/PlayerCanvas';
 import TopStats from '../TopStats/TopStats';
 import CreditScreen from './CreditScreen';
+import WinnerRedImage from '../../assets/images/WINNER_RED.png';
+import WinnerBlueImage from '../../assets/images/WINNER_BLUE.png';
 
 interface TogglePageType {
   togglePage: () => void
@@ -42,18 +44,25 @@ const Viewer = ({togglePage} : TogglePageType) => {
       <ViewerStateContext.Provider value={{replay, round, isPlaying, speed}}>
         {showCreditScreen ? <CreditScreen/> : <></>}
         {replay ?
-            <div className='layout'>
-                <div className='layout-top'>
-                  <TopStats></TopStats>
-                </div>
-                <div className='layout-center'>
-                  <PlayerCanvas side='RED'></PlayerCanvas>
-                  <PlayerCanvas side='BLUE'></PlayerCanvas>
-                </div>
-                <div className='layout-bottom'>
-                    <BottomPanel togglePage={togglePage}></BottomPanel>    
-                </div>
-            </div>
+          <>
+              <div className='layout'>
+                  <div className='layout-top'>
+                    <TopStats></TopStats>
+                  </div>
+                  <div className='layout-center'>
+                    <PlayerCanvas side='RED'></PlayerCanvas>
+                    <PlayerCanvas side='BLUE'></PlayerCanvas>
+                  </div>
+                  <div className='layout-bottom'>
+                      <BottomPanel togglePage={togglePage}></BottomPanel>    
+                  </div>
+                  
+              </div>
+              <img className={`winner ${replay.winner}`} 
+                    src = {replay.winner == "RED" ? 
+                        WinnerRedImage : WinnerBlueImage} 
+                    alt = "Winner Image" />
+            </>
           : 
             <div className='loading'>
               <BottomPanel togglePage={togglePage}></BottomPanel>    

@@ -110,5 +110,7 @@ export interface Turn {
 export interface Replay {
   winner: string;
   turns: number;
+  switch_turn_start: number;
+  switch_turn_end: number;
   replay: Turn[];
 }

@@ -100,3 +100,20 @@
     top: 15px;
     right: 20px;
 }
+
+/* Winner Icon */
+.winner {
+    position: fixed;
+    width: 15vh;
+    height: 15vh;
+    top: 65vh;
+    z-index: 15;
+}
+
+.winner.RED {
+ left: 2vh;
+}
+
+.winner.BLUE {
+ right: 2vh;
+}

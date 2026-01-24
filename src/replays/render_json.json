@@ -1,0 +1,925 @@
+{
+  "winner": "BLUE",
+  "turns": 1,
+  "switch_turn_start": 250,
+  "switch_turn_end": 350,
+  "replay": [
+    {
+      "turn": 1,
+      "team_money": {
+        "RED": 151,
+        "BLUE": 151
+      },
+      "bots": [
+        {
+          "bot_id": 0,
+          "team": "RED",
+          "x": 7,
+          "y": 1,
+          "holding": null,
+          "map_team": "RED"
+        },
+        {
+          "bot_id": 1,
+          "team": "BLUE",
+          "x": 8,
+          "y": 1,
+          "holding": null,
+          "map_team": "BLUE"
+        }
+      ],
+      "orders": {
+        "RED": [
+          {
+            "order_id": 1,
+            "required": [
+              "NOODLES",
+              "MEAT"
+            ],
+            "created_turn": 0,
+            "expires_turn": 200,
+            "reward": 10000,
+            "penalty": 3,
+            "claimed_by": null,
+            "completed_turn": null
+          }
+        ],
+        "BLUE": [
+          {
+            "order_id": 1,
+            "required": [
+              "NOODLES",
+              "MEAT"
+            ],
+            "created_turn": 0,
+            "expires_turn": 200,
+            "reward": 10000,
+            "penalty": 3,
+            "claimed_by": null,
+            "completed_turn": null
+          }
+        ]
+      },
+      "red_map": [
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "SINK",
+            "is_walkable": false,
+            "num_dirty_plates": 0,
+            "curr_dirty_plate_progress": 0,
+            "using": false
+          },
+          {
+            "tile_name": "COOKER",
+            "is_walkable": false,
+            "item": {
+              "type": "Pan",
+              "food": null
+            },
+            "cook_progress": 0
+          },
+          {
+            "tile_name": "COUNTER",
+            "is_walkable": false,
+            "item": null
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "SINKTABLE",
+            "is_walkable": false,
+            "num_clean_plates": 0
+          },
+          {
+            "tile_name": "SUBMIT",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "SHOP",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "BOX",
+            "is_walkable": false,
+            "item": null,
+            "count": 0
+          },
+          {
+            "tile_name": "TRASH",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ]
+      ],
+      "blue_map": [
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "SINK",
+            "is_walkable": false,
+            "num_dirty_plates": 0,
+            "curr_dirty_plate_progress": 0,
+            "using": false
+          },
+          {
+            "tile_name": "COOKER",
+            "is_walkable": false,
+            "item": {
+              "type": "Pan",
+              "food": null
+            },
+            "cook_progress": 0
+          },
+          {
+            "tile_name": "COUNTER",
+            "is_walkable": false,
+            "item": null
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "SINKTABLE",
+            "is_walkable": false,
+            "num_clean_plates": 0
+          },
+          {
+            "tile_name": "SUBMIT",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "SHOP",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "BOX",
+            "is_walkable": false,
+            "item": null,
+            "count": 0
+          },
+          {
+            "tile_name": "TRASH",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "FLOOR",
+            "is_walkable": true
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ],
+        [
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          },
+          {
+            "tile_name": "WALL",
+            "is_walkable": false
+          }
+        ]
+      ]
+    }
+  ]
+}
