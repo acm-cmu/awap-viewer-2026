@@ -1,14 +1,13 @@
 import type { ModelName } from "../../Types";
 import { Gltf } from "@react-three/drei";
-// import Shop from "../../assets/models/shop.glb";
 import { TileInfo } from "./MapTileConst";
 
 type TileProps = {
   i: number;
   j: number;
-  side: "RED" | "BLUE"
-  type: ModelName
-  hideWalls: boolean
+  side: "RED" | "BLUE";
+  type: ModelName;
+  hideWalls: boolean;
 };
 
 const MapTileModel = (props: TileProps) => {

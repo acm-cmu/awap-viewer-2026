@@ -119,12 +119,6 @@ export const TileInfo : TileInfoType = {
     }
 } as const
 
-// Object.keys(TileInfo).forEach((tile) => {
-//     useGLTF.preload(TileInfo[tile].redSrc);
-//     if (TileInfo[tile].blueSrc != TileInfo[tile].redSrc) {
-//         useGLTF.preload(TileInfo[tile].blueSrc);
-//     }
-// });
 useGLTF.preload(Shop);
 useGLTF.preload(Cooker);
 useGLTF.preload(Counter);

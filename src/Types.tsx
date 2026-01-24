@@ -1,4 +1,4 @@
-export type FoodName = "EGG" | "ONIONS" | "MEAT" | "NOODLES" | "SAUCES";
+export type FoodName = "EGG" | "ONIONS" | "MEAT" | "NOODLES" | "SAUCE";
 
 export type Food = {
     type: "Food";
@@ -48,13 +48,13 @@ export type ModelName = TileName | "BOT"
 
 export type TileProperties = 
 {
-        redSrc: string
-        blueSrc: string
-        scaleX: number
-        scaleZ: number
-        scaleY: number
-        yOffset: number
-        rotationY: number
+    redSrc: string
+    blueSrc: string
+    scaleX: number
+    scaleZ: number
+    scaleY: number
+    yOffset: number
+    rotationY: number
 }
 
 export type TileInfoType = Record<ModelName, TileProperties>
@@ -72,6 +72,18 @@ export type MapTile = {
 }
 
 export type Map = MapTile[][]
+
+export type FoodProperties = 
+{
+    unchoppedSrc: string
+    choppedSrc: string
+    scaleX: number
+    scaleZ: number
+    scaleY: number
+    yOffset: number
+}
+
+export type FoodInfoType = Record<FoodName, FoodProperties[]>
 
 export interface Turn {
     turn: number;
