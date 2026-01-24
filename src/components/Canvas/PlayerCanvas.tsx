@@ -15,9 +15,11 @@ interface CanvasType {
   side: "RED" | "BLUE"
 }
 
-const counterGroundOffset = 0.42;
+const counterBoxGroundOffset = 0.42;
 const cookerGroundOffset = 0.43;
-const boxGroundOffset = 0.43;
+const sinkGroundOffset = 0.35;
+const sinkTableGroundOffset = 0.43;
+const sinkZOffset = 0.07;
 
 const PlayerCanvas = ({side} : CanvasType) => {
   const stateContext = useContext(ViewerStateContext);
@@ -115,7 +117,25 @@ const PlayerCanvas = ({side} : CanvasType) => {
       for (let col = 0; col < map[0].length; col++) {
         let info : MapTile = map[row][col];
 
-        if (info.tile_name == "COUNTER" || info.tile_name == "COOKER" || info.tile_name == "BOX") {
+        if (info.tile_name == "SINK" || info.tile_name == "SINKTABLE") {
+          let num_plates = 0;
+          if (info.tile_name == "SINK" &&  info.num_dirty_plates != undefined) {
+            num_plates = info.num_dirty_plates;
+          } else if (info.tile_name == "SINKTABLE" &&  info.num_clean_plates != undefined) {
+            num_plates = info.num_clean_plates;
+          }
+          tempArr.push(
+            (
+              <FoodHolder i={row} j={col} side={side} 
+                          type={"Plate"}
+                          groundOffset={info.tile_name == "SINK" ? sinkGroundOffset : sinkTableGroundOffset}
+                          foods={[]}
+                          count={num_plates}
+                          zOffset={info.tile_name == "SINK" ? sinkZOffset : 0}
+              />
+            ) as ReactNode
+          );
+        } if (info.tile_name == "COUNTER" || info.tile_name == "COOKER" || info.tile_name == "BOX") {
           let item : Item | null | undefined = info.item;
           if (item == null || item == undefined) continue;
 
@@ -140,7 +160,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
                           type={item.type}
                           groundOffset={info.tile_name == "COOKER" ? 
                                         cookerGroundOffset 
-                                      : counterGroundOffset}
+                                      : counterBoxGroundOffset}
                           foods={foods}
                           count={count}
               />

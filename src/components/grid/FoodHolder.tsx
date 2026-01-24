@@ -8,13 +8,14 @@ type FoodHolderProps = {
   i: number;
   j: number;
   groundOffset: number;
+  zOffset?: number;
   side: "RED" | "BLUE";
   type: "Plate" | "Pan" | "Food";
   foods: Food[]
   count: number
 }
 
-const FoodHolder = ({i, j, type, side, groundOffset, foods, count } : FoodHolderProps) => {
+const FoodHolder = ({i, j, type, side, groundOffset, foods, count, zOffset=0 } : FoodHolderProps) => {
     const height = type == "Food" ? 0 : PlateInfo[type].height;
     const yOffset = type == "Food" ? -0.1 : PlateInfo[type].yOffset;
     const singleHeight = (type == "Food" ? 0 : PlateInfo[type].stackHeight) + 0.01 * foods.length;
@@ -38,7 +39,7 @@ const FoodHolder = ({i, j, type, side, groundOffset, foods, count } : FoodHolder
             );
         }
         itemModels.push(
-            <group position={[0.51 * i, 0.25 + singleHeight * c + yOffset + groundOffset, 0.51 * j] }>
+            <group position={[0.51 * i, 0.25 + singleHeight * c + yOffset + groundOffset, 0.51 * j + zOffset] }>
                 {type == "Food" ? <></>
                 : <Gltf 
                     src={side == "RED" ? PlateInfo[type].redSrc : PlateInfo[type].blueSrc} />

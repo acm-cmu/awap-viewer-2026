@@ -203,7 +203,7 @@
           {
             "tile_name": "SINK",
             "is_walkable": false,
-            "num_dirty_plates": 0,
+            "num_dirty_plates": 10,
             "curr_dirty_plate_progress": 0,
             "using": false
           },
@@ -342,7 +342,7 @@
           {
             "tile_name": "SINKTABLE",
             "is_walkable": false,
-            "num_clean_plates": 0
+            "num_clean_plates": 10
           },
           {
             "tile_name": "SUBMIT",
