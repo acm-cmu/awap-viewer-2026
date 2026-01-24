@@ -85,10 +85,20 @@ export type FoodProperties =
 
 export type FoodInfoType = Record<FoodName, FoodProperties[]>
 
+export type PlateProperties =
+{
+    redSrc: string;
+    blueSrc: string;
+    yOffset: number;
+    height: number;
+}
+
+export type PlateInfoType = Record<"PLATE" | "PAN", PlateProperties>
+
 export interface Turn {
     turn: number;
     team_money: {RED: number; BLUE: number};
- bots: BotInfo[];
+  bots: BotInfo[];
     orders: {
         RED: Order[];
         BLUE: Order[];
@@ -96,12 +106,6 @@ export interface Turn {
     red_map: Map;
     blue_map: Map;
 }
-
-export type PlateProperties =
-{
-
-}
-
 
 export interface Replay {
   winner: string;

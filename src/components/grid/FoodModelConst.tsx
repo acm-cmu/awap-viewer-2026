@@ -1,4 +1,4 @@
-import type { FoodInfoType} from "../../Types";
+import type { FoodInfoType, PlateInfoType } from "../../Types";
 import { useGLTF } from "@react-three/drei";
 import SAUCE from "../../assets/models/food/BBQ_Sauce.glb";
 import NOODLE from "../../assets/models/food/noodle.glb";
@@ -53,7 +53,7 @@ export const FoodTileInfo : FoodInfoType = {
             choppedSrc: SAUCE,
             scaleX: 0.65,
             scaleZ: 0.65,
-            scaleY: 1,
+            scaleY: 0.7,
             yOffset: -0.1
         }
     ],
@@ -63,7 +63,7 @@ export const FoodTileInfo : FoodInfoType = {
             choppedSrc: CHOPPED_ONION,
             scaleX: 0.2,
             scaleZ: 0.2,
-            scaleY: 0.2,
+            scaleY: 0.12,
             yOffset: -0.1
         }
     ],
@@ -105,16 +105,18 @@ export const FoodTileInfo : FoodInfoType = {
     ]
 } as const
 
-export const PlateInfo = {
+export const PlateInfo : PlateInfoType = {
     "PLATE" : {
         redSrc: RED_BOWL,
         blueSrc: BLUE_BOWL,
         yOffset: -0.1,
+        height: 0.17,
     },
     "PAN" : {
         redSrc: PAN,
         blueSrc: PAN,
         yOffset: -0.1,
+        height: 0.11,
     }
 }
 

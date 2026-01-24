@@ -3,8 +3,6 @@ import { Gltf } from "@react-three/drei";
 import { FoodTileInfo } from "./FoodModelConst";
 
 type FoodProps = {
-  i: number;
-  j: number;
   xOffset?: number;
   zOffset?: number;
   height: number;
@@ -13,9 +11,9 @@ type FoodProps = {
   chopped: boolean;
 }
 
-const FoodModel = ({i, j, xOffset=0, zOffset=0, height, type, cookedStage, chopped}: FoodProps) => {
+const FoodModel = ({xOffset=0, zOffset=0, height, type, cookedStage, chopped}: FoodProps) => {
   return (
-    <group position={[0.51 * i + xOffset, 0.25 + height + FoodTileInfo[type][cookedStage].yOffset, 0.51 * j + zOffset]}>
+    <group position={[xOffset, height + FoodTileInfo[type][cookedStage].yOffset, zOffset]}>
       <Gltf 
         src={chopped ?
             FoodTileInfo[type][cookedStage].choppedSrc

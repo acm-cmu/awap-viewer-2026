@@ -133,7 +133,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
               <FoodModel i={2} j={5} height={0} type='MEAT' chopped={false} cookedStage={2}/>
             </Suspense> */}
             <FoodHolder i={1} j={2} type={"PLATE"} />
-            <FoodHolder i={1} j={2} type={"PAN"} />
+            <FoodHolder i={2} j={2} type={"PAN"} />
           </group>
         </Canvas>
       </div>
