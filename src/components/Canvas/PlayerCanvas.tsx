@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { MapTile, Item, Food } from '../../Types';
 import { useMemo, useState } from 'react';
 import { OrbitControls } from '@react-three/drei'
 import Grid from '../grid/Grid';
@@ -7,13 +8,15 @@ import { ViewerStateContext } from '../pages/Viewer';
 import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import MapTileModel from '../grid/MapTileModel';
-import FoodModel from '../grid/FoodModel';
 import FoodHolder from '../grid/FoodHolder';
 import "./PlayCanvas.css"
 
 interface CanvasType {
   side: "RED" | "BLUE"
 }
+
+const counterGroundOffset = 0.42;
+const cookerGroundOffset = 0.43;
 
 const PlayerCanvas = ({side} : CanvasType) => {
   const stateContext = useContext(ViewerStateContext);
@@ -67,7 +70,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
 
   const tiles = useMemo(() => {
     const tempArr: ReactNode[][] = []
-    // Basic Map
+    // Tile Models 
     for (let row = 0; row < map.length; row++) {
       tempArr.push([] as ReactNode[]);
       for (let col = 0; col < map[0].length; col++) {
@@ -86,8 +89,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
 
   const bots = useMemo(() => {
     const tempArr: ReactNode[] = []
-    // Basic Map
-    console.log(turnInfo.bots)
+    // Getting bots from map
     for (let k = 0; k < turnInfo.bots.length; k++) {
       console.log(turnInfo.bots[k])
       if (turnInfo.bots[k].map_team == side) {
@@ -100,6 +102,52 @@ const PlayerCanvas = ({side} : CanvasType) => {
                           ></MapTileModel>
           ) as ReactNode
         );
+      }
+    }
+    return [tempArr];
+  }, [turnInfo])
+
+  const foods = useMemo(() => {
+    const tempArr: ReactNode[] = []
+    for (let row = 0; row < map.length; row++) {
+      for (let col = 0; col < map[0].length; col++) {
+        let info : MapTile = map[row][col];
+        let item : Item | null | undefined = info.item;
+        if (item == null || item == undefined) continue;
+        
+        let foods : Food[] = []; 
+        if (item.type == "Food") {
+          foods.push(item);
+        }
+        if(item.type == "Pan" && item.food) {
+          foods.push(item.food);
+        }
+        if(item.type == "Plate" && item.food) {
+          foods.push(...item.food);
+        }
+
+        console.log(foods);
+        if (info.tile_name == "COUNTER") {
+          tempArr.push(
+            (
+              <FoodHolder i={row} j={col} side={side} 
+                          type={item.type}
+                          groundOffset={counterGroundOffset}
+                          foods={foods}
+              />
+            ) as ReactNode
+          );
+        } else if (info.tile_name == "COOKER") {
+          tempArr.push(
+            (
+              <FoodHolder i={row} j={col} side={side} 
+                          type={item.type}
+                          groundOffset={cookerGroundOffset}
+                          foods={foods}
+              />
+            ) as ReactNode
+          );
+        }
       }
     }
     return [tempArr];
@@ -132,8 +180,11 @@ const PlayerCanvas = ({side} : CanvasType) => {
               <FoodModel i={2} j={4} height={0} type='NOODLES' chopped={false} cookedStage={0}/>
               <FoodModel i={2} j={5} height={0} type='MEAT' chopped={false} cookedStage={2}/>
             </Suspense> */}
-            <FoodHolder i={1} j={2} type={"PLATE"} />
-            <FoodHolder i={2} j={2} type={"PAN"} />
+            {/* <FoodHolder i={1} j={2} type={"Plate"} side={side} />
+            <FoodHolder i={2} j={2} type={"Pan"} side={side} /> */}
+            <Suspense>
+              {foods}
+            </Suspense>
           </group>
         </Canvas>
       </div>

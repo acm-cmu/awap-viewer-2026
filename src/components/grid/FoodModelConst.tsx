@@ -15,7 +15,8 @@ import RAW_MEAT_C from "../../assets/models/food/raw_meat_C.glb";
 import COOKED_MEAT_C from "../../assets/models/food/cooked_meat_C.glb";
 import BURNT_MEAT_C from "../../assets/models/food/burnt_meat_C.glb";
 
-import PAN from "../../assets/models/food/cat_pan.glb";
+import BLUE_PAN from "../../assets/models/food/cat_pan_blue.glb";
+import RED_PAN from "../../assets/models/food/cat_pan_red.glb";
 import BLUE_BOWL from "../../assets/models/food/blue_bowl.glb";
 import RED_BOWL from "../../assets/models/food/red_bowl.glb";
 
@@ -106,15 +107,15 @@ export const FoodTileInfo : FoodInfoType = {
 } as const
 
 export const PlateInfo : PlateInfoType = {
-    "PLATE" : {
+    "Plate" : {
         redSrc: RED_BOWL,
         blueSrc: BLUE_BOWL,
         yOffset: -0.1,
         height: 0.17,
     },
-    "PAN" : {
-        redSrc: PAN,
-        blueSrc: PAN,
+    "Pan" : {
+        redSrc: RED_PAN,
+        blueSrc: BLUE_PAN,
         yOffset: -0.1,
         height: 0.11,
     }
@@ -122,7 +123,7 @@ export const PlateInfo : PlateInfoType = {
 
 
 
-useGLTF.preload(PAN);
+useGLTF.preload(BLUE_PAN);
 useGLTF.preload(RED_BOWL);
 useGLTF.preload(BLUE_BOWL);
 useGLTF.preload(SAUCE);

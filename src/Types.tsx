@@ -93,7 +93,7 @@ export type PlateProperties =
     height: number;
 }
 
-export type PlateInfoType = Record<"PLATE" | "PAN", PlateProperties>
+export type PlateInfoType = Record<"Plate" | "Pan", PlateProperties>
 
 export interface Turn {
     turn: number;
