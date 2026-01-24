@@ -31,9 +31,20 @@ const PlayerCanvas = ({side} : CanvasType) => {
     throw new Error('useViewer must be used within a ViewerProvider');
   }
   
+  const [switch_turn_start, switch_turn_end] = useMemo<number[]>(() => {
+    // -1 to account for array index offset
+    return [stateContext.replay!.switch_turn_start - 1,
+            stateContext.replay!.switch_turn_end - 1];
+  }, [stateContext.replay]);
+
+  const light = useMemo(() => {
+    return stateContext.round >= switch_turn_start && stateContext.round <= switch_turn_end ?
+            "yellow" : "white"
+  }, [stateContext.replay, stateContext.round]);
+  
   const turnInfo = useMemo(() => {
-    return stateContext.replay!.replay[stateContext.round]
-  }, [stateContext.replay, stateContext.round])
+    return stateContext.replay!.replay[stateContext.round];
+  }, [stateContext.replay, stateContext.round]);
 
   const initCameraY = Math.max(turnInfo.red_map.length, turnInfo.red_map[0].length) / 2;
 
@@ -213,7 +224,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
         <Canvas camera={{position: [0,initCameraY,0]}}>
           <OrbitControls />
           <directionalLight position={[2, 4, 3]} intensity={0.5}/>
-          <ambientLight color={"white"} intensity={1}/>
+          <ambientLight color={light} intensity={1}/>
           <group position={[-gaps[0], 0, -gaps[1]]}>
             <>{grid}</>
             <>{plane}</>

@@ -1,8 +1,8 @@
 {
   "winner": "RED",
   "turns": 46,
-  "switch_turn_start": 250,
-  "switch_turn_end": 350,
+  "switch_turn_start": 2,
+  "switch_turn_end": 25,
   "replay": [
     {
       "turn": 1,
