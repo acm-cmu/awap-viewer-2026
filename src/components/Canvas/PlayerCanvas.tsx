@@ -17,6 +17,7 @@ interface CanvasType {
 
 const counterGroundOffset = 0.42;
 const cookerGroundOffset = 0.43;
+const boxGroundOffset = 0.43;
 
 const PlayerCanvas = ({side} : CanvasType) => {
   const stateContext = useContext(ViewerStateContext);
@@ -112,42 +113,39 @@ const PlayerCanvas = ({side} : CanvasType) => {
     for (let row = 0; row < map.length; row++) {
       for (let col = 0; col < map[0].length; col++) {
         let info : MapTile = map[row][col];
-        let item : Item | null | undefined = info.item;
-        if (item == null || item == undefined) continue;
-        
-        let foods : Food[] = []; 
-        if (item.type == "Food") {
-          foods.push(item);
-        }
-        if(item.type == "Pan" && item.food) {
-          foods.push(item.food);
-        }
-        if(item.type == "Plate" && item.food) {
-          foods.push(...item.food);
-        }
 
-        console.log(foods);
-        if (info.tile_name == "COUNTER") {
+        if (info.tile_name == "COUNTER" || info.tile_name == "COOKER" || info.tile_name == "BOX") {
+          let item : Item | null | undefined = info.item;
+          if (item == null || item == undefined) continue;
+
+          let count = 1;
+          if (info.tile_name == "BOX" && info.count != undefined) {
+            count = info.count;
+          }
+          
+          let foods : Food[] = []; 
+          if (item.type == "Food") {
+            foods.push(item);
+          }
+          if(item.type == "Pan" && item.food) {
+            foods.push(item.food);
+          }
+          if(item.type == "Plate" && item.food) {
+            foods.push(...item.food);
+          }
           tempArr.push(
             (
               <FoodHolder i={row} j={col} side={side} 
                           type={item.type}
-                          groundOffset={counterGroundOffset}
+                          groundOffset={info.tile_name == "COOKER" ? 
+                                        cookerGroundOffset 
+                                      : counterGroundOffset}
                           foods={foods}
+                          count={count}
               />
             ) as ReactNode
           );
-        } else if (info.tile_name == "COOKER") {
-          tempArr.push(
-            (
-              <FoodHolder i={row} j={col} side={side} 
-                          type={item.type}
-                          groundOffset={cookerGroundOffset}
-                          foods={foods}
-              />
-            ) as ReactNode
-          );
-        }
+        } 
       }
     }
     return [tempArr];

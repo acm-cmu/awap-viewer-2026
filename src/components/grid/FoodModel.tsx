@@ -13,7 +13,7 @@ type FoodProps = {
 
 const FoodModel = ({xOffset=0, zOffset=0, height, type, cookedStage, chopped}: FoodProps) => {
   return (
-    <group position={[xOffset, height + FoodTileInfo[type][cookedStage].yOffset, zOffset]}>
+    <group position={[xOffset, height, zOffset]}>
       <Gltf 
         src={chopped ?
             FoodTileInfo[type][cookedStage].choppedSrc

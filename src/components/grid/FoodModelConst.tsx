@@ -29,7 +29,6 @@ export const FoodTileInfo : FoodInfoType = {
             scaleX: 0.8,
             scaleZ: 0.8,
             scaleY: 2,
-            yOffset: -0.1
         },
         {
             unchoppedSrc: COOKED_EGG,
@@ -37,7 +36,6 @@ export const FoodTileInfo : FoodInfoType = {
             scaleX: 0.6,
             scaleZ: 0.6,
             scaleY: 1,
-            yOffset: -0.1
         },
         {
             unchoppedSrc: BURNT_EGG,
@@ -45,7 +43,6 @@ export const FoodTileInfo : FoodInfoType = {
             scaleX: 0.6,
             scaleZ: 0.6,
             scaleY: 1,
-            yOffset: -0.1
         }
     ],
     "SAUCE" : [
@@ -55,7 +52,6 @@ export const FoodTileInfo : FoodInfoType = {
             scaleX: 0.65,
             scaleZ: 0.65,
             scaleY: 0.7,
-            yOffset: -0.1
         }
     ],
     "ONIONS" : [
@@ -65,7 +61,6 @@ export const FoodTileInfo : FoodInfoType = {
             scaleX: 0.2,
             scaleZ: 0.2,
             scaleY: 0.12,
-            yOffset: -0.1
         }
     ],
     "NOODLES" : [
@@ -75,7 +70,6 @@ export const FoodTileInfo : FoodInfoType = {
             scaleX: 0.12,
             scaleZ: 0.12,
             scaleY: 0.12,
-            yOffset: -0.1
         }
     ],
     "MEAT" : [
@@ -85,7 +79,6 @@ export const FoodTileInfo : FoodInfoType = {
             scaleX: 0.6,
             scaleZ: 0.6,
             scaleY: 0.6,
-            yOffset: -0.1
         },
         {
             unchoppedSrc: COOKED_MEAT_U,
@@ -93,7 +86,6 @@ export const FoodTileInfo : FoodInfoType = {
             scaleX: 0.6,
             scaleZ: 0.6,
             scaleY: 0.6,
-            yOffset: -0.1
         },
         {
             unchoppedSrc: BURNT_MEAT_U,
@@ -101,23 +93,26 @@ export const FoodTileInfo : FoodInfoType = {
             scaleX: 0.6,
             scaleZ: 0.6,
             scaleY: 0.6,
-            yOffset: -0.1
         }
     ]
 } as const
 
+// height is how tall the plate/pan is
+// yOffset helps account for ground diff
 export const PlateInfo : PlateInfoType = {
     "Plate" : {
         redSrc: RED_BOWL,
         blueSrc: BLUE_BOWL,
         yOffset: -0.1,
-        height: 0.17,
+        height: 0.07,
+        stackHeight: 0.07
     },
     "Pan" : {
         redSrc: RED_PAN,
         blueSrc: BLUE_PAN,
         yOffset: -0.1,
-        height: 0.11,
+        height: 0.01,
+        stackHeight: 0.03
     }
 }
 

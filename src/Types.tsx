@@ -80,7 +80,6 @@ export type FoodProperties =
     scaleX: number
     scaleZ: number
     scaleY: number
-    yOffset: number
 }
 
 export type FoodInfoType = Record<FoodName, FoodProperties[]>
@@ -91,6 +90,7 @@ export type PlateProperties =
     blueSrc: string;
     yOffset: number;
     height: number;
+    stackHeight: number;
 }
 
 export type PlateInfoType = Record<"Plate" | "Pan", PlateProperties>
