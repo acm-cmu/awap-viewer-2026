@@ -1,9 +1,5 @@
 import './OrderCard.css';
 
-// If you have a Types.ts file, uncomment this and adjust the path:
-// import type { Order } from '../../Types';
-
-// Otherwise, use this local interface:
 interface Order {
   order_id: number;
   required: string[];
@@ -35,7 +31,7 @@ const EXPIRING_SOON_THRESHOLD = 30;
 const OrderCard = ({ order, teamSide, currentTurn }: OrderCardProps) => {
   const remainingTurns = order.expires_turn - currentTurn;
 
-  // Determine order status
+
   const getOrderStatus = () => {
     if (order.completed_turn !== null) {
       return 'COMPLETED';
@@ -53,7 +49,7 @@ const OrderCard = ({ order, teamSide, currentTurn }: OrderCardProps) => {
 
   return (
     <div className={`order-card order-card-${teamSide.toLowerCase()} order-card-${status.toLowerCase()}`}>
-      {/* Header */}
+
       <div className="order-card-header">
         <span className="order-id">Order #{order.order_id}</span>
         {status === 'COMPLETED' && <span className="status-badge completed">✓</span>}
@@ -61,7 +57,7 @@ const OrderCard = ({ order, teamSide, currentTurn }: OrderCardProps) => {
         {status === 'EXPIRING_SOON' && <span className="status-badge expiring">!</span>}
       </div>
 
-      {/* Required Items */}
+ 
       <div className="order-card-body">
         <div className="required-items">
           <p className="required-label">Required:</p>
@@ -73,7 +69,7 @@ const OrderCard = ({ order, teamSide, currentTurn }: OrderCardProps) => {
         </div>
       </div>
 
-      {/* Footer - Reward, Penalty, Timer */}
+   
       <div className="order-card-footer">
         <div className="reward-penalty">
           <span className="reward">+${order.reward}</span>

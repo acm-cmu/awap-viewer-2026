@@ -26,7 +26,6 @@ const TopStats = () => {
 
     return (
         <div className="top-stats-container">
-            {/* RED Team Section */}
             <div className="team-section team-section-red">
                 <div className="team-header">
                     <h2 className="team-name">RED TEAM</h2>
@@ -44,7 +43,6 @@ const TopStats = () => {
                 </div>
             </div>
 
-            {/* BLUE Team Section */}
             <div className="team-section team-section-blue">
                 <div className="team-header">
                     <h2 className="team-name">BLUE TEAM</h2>
