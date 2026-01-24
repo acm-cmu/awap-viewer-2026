@@ -42,11 +42,63 @@
             "penalty": 3,
             "claimed_by": null,
             "completed_turn": null
+          },
+          {
+            "order_id": 2,
+            "required": [
+              "NOODLES",
+              "MEAT"
+            ],
+            "created_turn": 0,
+            "expires_turn": 200,
+            "reward": 10000,
+            "penalty": 3,
+            "claimed_by": null,
+            "completed_turn": null
+          },
+          {
+            "order_id": 3,
+            "required": [
+              "NOODLES",
+              "MEAT"
+            ],
+            "created_turn": 0,
+            "expires_turn": 200,
+            "reward": 10000,
+            "penalty": 3,
+            "claimed_by": null,
+            "completed_turn": null
+          },
+          {
+            "order_id": 4,
+            "required": [
+              "NOODLES",
+              "MEAT"
+            ],
+            "created_turn": 0,
+            "expires_turn": 10,
+            "reward": 10000,
+            "penalty": 3,
+            "claimed_by": null,
+            "completed_turn": null
           }
         ],
         "BLUE": [
           {
             "order_id": 1,
+            "required": [
+              "NOODLES",
+              "MEAT"
+            ],
+            "created_turn": 0,
+            "expires_turn": 200,
+            "reward": 10000,
+            "penalty": 3,
+            "claimed_by": null,
+            "completed_turn": null
+          },
+          {
+            "order_id": 2,
             "required": [
               "NOODLES",
               "MEAT"

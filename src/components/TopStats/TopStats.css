@@ -52,10 +52,15 @@
 /* Orders Container */
 .orders-container {
   display: flex;
+  width: 50vw;
   gap: 12px;
   overflow-x: auto;
   padding: 5px;
   flex: 1;
+}
+
+.orders-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* Scrollbar styling */
