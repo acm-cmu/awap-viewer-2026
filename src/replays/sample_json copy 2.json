@@ -6864,8 +6864,14 @@
           {
             "tile_name": "BOX",
             "is_walkable": false,
-            "item": null,
-            "count": 0
+             "item": {
+              "type": "Food",
+              "food_name": "MEAT",
+              "food_id": 2,
+              "chopped": false,
+              "cooked_stage": 0
+            },
+            "count": 3
           },
           {
             "tile_name": "TRASH",
@@ -7294,8 +7300,14 @@
           {
             "tile_name": "BOX",
             "is_walkable": false,
-            "item": null,
-            "count": 0
+             "item": {
+              "type": "Food",
+              "food_name": "MEAT",
+              "food_id": 2,
+              "chopped": false,
+              "cooked_stage": 0
+            },
+            "count": 3
           },
           {
             "tile_name": "TRASH",
