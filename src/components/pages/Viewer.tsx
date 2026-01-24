@@ -1,5 +1,5 @@
 import './Viewer.css';
-import { useState, createContext } from 'react';
+import { useState, createContext, useMemo } from 'react';
 import type {Replay} from '../../Types';
 import BottomPanel from '../BottomPanel/BottomPanel';
 import PlayerCanvas from '../Canvas/PlayerCanvas';
@@ -39,6 +39,12 @@ const Viewer = ({togglePage} : TogglePageType) => {
   const [speed, setSpeed] = useState<number>(1.0);
   const [showCreditScreen, setShowCreditScreen] = useState<boolean>(false);
 
+  const redPercentage = useMemo(() => {
+    if (!replay) return 0;
+    let sum = replay!.replay[round].team_money.RED + replay!.replay[round].team_money.BLUE;
+    return replay!.replay[round].team_money.RED / sum * 100;
+  }, [replay, round]);
+
   return (
     <ViewerActionContext.Provider value={{setReplay, setRound, setIsPlaying, setSpeed, setShowCreditScreen}}>
       <ViewerStateContext.Provider value={{replay, round, isPlaying, speed}}>
@@ -62,6 +68,8 @@ const Viewer = ({togglePage} : TogglePageType) => {
                     src = {replay.winner == "RED" ? 
                         WinnerRedImage : WinnerBlueImage} 
                     alt = "Winner Image" />
+              <div className='vertical-bar left'><div className='top' style={{height: `${redPercentage}%`}}></div></div>
+              <div className='vertical-bar right'><div className='top' style={{height: `${redPercentage}%`}}></div></div>
             </>
           : 
             <div className='loading'>

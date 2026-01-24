@@ -117,3 +117,28 @@
 .winner.BLUE {
  right: 2vh;
 }
+
+/* Progress Comparison */
+.vertical-bar {
+    border-radius: 0;
+    height: 30vh;
+    width: 2vw;
+    position: absolute;
+    background: linear-gradient(to top, #2a5672, #4dbbff);
+}
+
+.vertical-bar .top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgb(166, 84, 84), #e73827);;
+}
+
+
+
+.vertical-bar.left {
+    left: 5px;
+}
+.vertical-bar.right {
+    right: 5px;
+}

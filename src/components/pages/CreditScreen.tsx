@@ -23,6 +23,7 @@ const CreditScreen = () => {
                     <li>"Cat Pan" (https://skfb.ly/ou9B9) by mdiaz16 is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</li>
                     <li>"Chef Hat (Toon)" (https://skfb.ly/o6PCV) by shimtimultimedia is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</li>
                     <li>"Ramen" (https://skfb.ly/pEzUX) by IssBlack is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</li>
+                    <li>"Sandwich assembly" (https://skfb.ly/ozG7Q) by Harry Charalambous is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</li>
                 </ul>
             </div>
             <button className="toggle-credit-screen" 

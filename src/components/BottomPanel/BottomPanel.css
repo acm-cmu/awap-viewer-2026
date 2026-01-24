@@ -42,6 +42,10 @@ h1 {
     margin: 10px;
 }
 
+.init-title {
+    background-color: transparent;
+}
+
 h2 {
     margin: 10px;
     font-size: large;

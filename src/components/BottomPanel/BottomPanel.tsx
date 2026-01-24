@@ -104,7 +104,7 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
         </>
       : 
         <>
-          <h1>AWAP 2026 Viewer</h1>
+          <h1 className="init-title">AWAP 2026 Viewer</h1>
           <div className="container">
             <button onClick={togglePage}>Map Maker</button>
             <input id="fileobj" type="file" className="file-upload file-upload-small" onChange={showFile} />
