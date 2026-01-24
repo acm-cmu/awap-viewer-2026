@@ -1,9 +1,9 @@
 .top-stats-container {
-  width: 100%;
+  width: calc(100% - 20px);
   height: 100%;
   display: flex;
   background-color: rgba(0, 0, 0, 0.8);
-  padding: 10px;
+  margin: 10px;
   gap: 20px;
 }
 
@@ -52,10 +52,10 @@
 /* Orders Container */
 .orders-container {
   display: flex;
-  width: 50vw;
   gap: 12px;
   overflow-x: auto;
   padding: 5px;
+  width: calc(50vw - 60px);
   flex: 1;
 }
 
