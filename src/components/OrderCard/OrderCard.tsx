@@ -1,15 +1,15 @@
 import './OrderCard.css';
 
-interface Order {
-  order_id: number;
-  required: string[];
-  created_turn: number;
-  expires_turn: number;
-  reward: number;
-  penalty: number;
-  claimed_by: number | null;
-  completed_turn: number | null;
-}
+// interface Order {
+//   order_id: number;
+//   required: string[];
+//   created_turn: number;
+//   expires_turn: number;
+//   reward: number;
+//   penalty: number;
+//   claimed_by: number | null;
+//   completed_turn: number | null;
+// }
 
 interface OrderCardProps {
   order: {
