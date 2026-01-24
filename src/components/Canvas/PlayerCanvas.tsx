@@ -49,6 +49,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
   const initCameraY = Math.max(turnInfo.red_map.length, turnInfo.red_map[0].length) / 2;
 
   const map = useMemo(() => {
+    // console.log(`Width: ${turnInfo.red_map.length} Height: ${turnInfo.red_map[0].length}`)
     return side == "RED" ? turnInfo.red_map : turnInfo.blue_map
   }, [turnInfo])
 
@@ -234,15 +235,6 @@ const PlayerCanvas = ({side} : CanvasType) => {
             <Suspense>
               {bots}
             </Suspense>
-            {/* <Suspense>
-              <FoodModel i={2} j={2} height={0} type='ONIONS' chopped={false} cookedStage={0}/>
-              <FoodModel i={2} j={1} height={0} type='SAUCE' chopped={false} cookedStage={0}/>
-              <FoodModel i={2} j={3} height={0} type='EGG' chopped={false} cookedStage={2}/>
-              <FoodModel i={2} j={4} height={0} type='NOODLES' chopped={false} cookedStage={0}/>
-              <FoodModel i={2} j={5} height={0} type='MEAT' chopped={false} cookedStage={2}/>
-            </Suspense> */}
-            {/* <FoodHolder i={1} j={2} type={"Plate"} side={side} />
-            <FoodHolder i={2} j={2} type={"Pan"} side={side} /> */}
             <Suspense>
               {foods}
             </Suspense>

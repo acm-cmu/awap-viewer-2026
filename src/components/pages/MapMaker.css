@@ -1,0 +1,34 @@
+a {
+    padding: 10px;
+    background-color: white;
+    color: black;
+}
+
+/* Map Tiles */
+#TileDisplay {
+    display: grid;
+    width: 40vw;
+    height: 40vh;
+}
+
+/* 3D Preview */
+.preview {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.preview canvas {
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    width: 50vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
