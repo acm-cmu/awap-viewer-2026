@@ -1,14 +1,61 @@
-a {
-    padding: 10px;
-    background-color: white;
-    color: black;
+/* Map Tiles */
+.TileDisplay {
+    display: grid;
+    width: 50vw;
+    height: 50vh;
+    margin: 20px;
 }
 
-/* Map Tiles */
-#TileDisplay {
-    display: grid;
-    width: 40vw;
-    height: 40vh;
+.mapTile {
+    border: 1px solid black;
+    border-radius: 0px;
+    margin: 0px;
+    font-size: xx-small;
+    overflow: hidden;
+}
+
+.mapTile.FLOOR{
+    background-color: pink;
+}
+
+.mapTile.WALL{
+    background-color: gray;
+}
+
+.mapTile.COUNTER{
+    background-color: yellow;
+}
+
+.mapTile.COOKER {
+    background-color: orange;
+}
+
+.mapTile.SINK {
+    background-color: lightskyblue;
+}
+
+.mapTile.SINKTABLE {
+    background-color: white;
+}
+
+.mapTile.TRASH {
+    background-color: mediumorchid;
+}
+
+.mapTile.SUBMIT {
+    background-color: lightgreen;
+}
+
+.mapTile.SHOP {
+    background-color: lightseagreen;
+}
+
+.mapTile.BOX {
+    background-color: tan;
+}
+
+.mapTile.BOT {
+    background-color: red;
 }
 
 /* 3D Preview */
@@ -31,4 +78,12 @@ a {
     position: absolute;
     right: 0;
     top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    margin-right: 10px;;
 }

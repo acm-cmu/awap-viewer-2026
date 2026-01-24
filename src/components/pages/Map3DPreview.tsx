@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { TileName } from '../../Types';
+import { mapToTile } from './MapMaker';
 import { OrbitControls } from '@react-three/drei'
 import Grid from '../grid/Grid';
 import { Canvas } from '@react-three/fiber';
@@ -10,15 +10,6 @@ type Map3DPreviewProps = {
     width: number;
     height: number;
     map: string[][];
-}
-
-const mapToTile : Record<string, TileName> = {
-    "." : "FLOOR",
-    "#" : "WALL",
-    "C" : "COOKER",
-    "S" : "SINK",
-    "T" : "SINKTABLE",
-    "b" : "BOX"
 }
 
 const Map3DPreview = ({width, height, map} : Map3DPreviewProps) => {
