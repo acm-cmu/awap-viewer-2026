@@ -20,6 +20,8 @@ const cookerGroundOffset = 0.43;
 const sinkGroundOffset = 0.35;
 const sinkTableGroundOffset = 0.43;
 const sinkZOffset = 0.07;
+const botGroundOffset = 0.34;
+const botZOffset = 0.15;
 
 const PlayerCanvas = ({side} : CanvasType) => {
   const stateContext = useContext(ViewerStateContext);
@@ -167,6 +169,35 @@ const PlayerCanvas = ({side} : CanvasType) => {
             ) as ReactNode
           );
         } 
+      }
+    }
+    // bots holding food
+    for (let k = 0; k < turnInfo.bots.length; k++) {
+      if (turnInfo.bots[k].map_team == side) {
+        let item = turnInfo.bots[k].holding;
+        if (item == null) continue;
+        let foods : Food[] = []; 
+        if (item.type == "Food") {
+          foods.push(item);
+        }
+        if(item.type == "Pan" && item.food) {
+            foods.push(item.food);
+          }
+        if(item.type == "Plate" && item.food) {
+          foods.push(...item.food);
+        }
+        tempArr.push(
+          (
+            <FoodHolder i={turnInfo.bots[k].x} j={turnInfo.bots[k].y} 
+                          side={turnInfo.bots[k].map_team} 
+                          type={item.type}
+                          groundOffset={botGroundOffset}
+                          zOffset={botZOffset}
+                          foods={foods}
+                          count={1}
+                          />
+          ) as ReactNode
+        );
       }
     }
     return [tempArr];

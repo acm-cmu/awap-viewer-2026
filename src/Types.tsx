@@ -37,7 +37,7 @@ export interface BotInfo {
     team: "RED" | "BLUE";
     x: number;
     y: number;
-    holding: null | Plate | Food;
+    holding: null | Item;
     map_team: "RED" | "BLUE";
 }
 
