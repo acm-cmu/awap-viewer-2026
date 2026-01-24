@@ -42,7 +42,7 @@ const Viewer = ({togglePage} : TogglePageType) => {
   const redPercentage = useMemo(() => {
     if (!replay) return 0;
     let sum = replay!.replay[round].team_money.RED + replay!.replay[round].team_money.BLUE;
-    return replay!.replay[round].team_money.RED / sum * 100;
+    return sum > 0 ? replay!.replay[round].team_money.RED / sum * 100 : 50;
   }, [replay, round]);
 
   return (

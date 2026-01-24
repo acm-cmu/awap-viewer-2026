@@ -7,8 +7,8 @@
     {
       "turn": 1,
       "team_money": {
-        "RED": 151,
-        "BLUE": 151
+        "RED": 0,
+        "BLUE": 0
       },
       "bots": [
         {
@@ -37,7 +37,7 @@
               "MEAT"
             ],
             "created_turn": 0,
-            "expires_turn": 200,
+            "expires_turn": 2,
             "reward": 10000,
             "penalty": 3,
             "claimed_by": null,
@@ -1923,7 +1923,7 @@
               "MEAT"
             ],
             "created_turn": 0,
-            "expires_turn": 200,
+            "expires_turn": 2,
             "reward": 10000,
             "penalty": 3,
             "claimed_by": null,
