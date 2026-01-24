@@ -31,6 +31,8 @@ const PlayerCanvas = ({side} : CanvasType) => {
     return stateContext.replay!.replay[stateContext.round]
   }, [stateContext.replay, stateContext.round])
 
+  const initCameraY = Math.max(turnInfo.red_map.length, turnInfo.red_map[0].length) / 2;
+
   const map = useMemo(() => {
     return side == "RED" ? turnInfo.red_map : turnInfo.blue_map
   }, [turnInfo])
@@ -158,7 +160,7 @@ const PlayerCanvas = ({side} : CanvasType) => {
         {hideWalls ? "Show Walls" : "Hide Walls"}
         </button>
       
-        <Canvas camera={{position: [0,8,0]}}>
+        <Canvas camera={{position: [0,initCameraY,0]}}>
           <OrbitControls />
           <directionalLight position={[2, 4, 3]} intensity={0.5}/>
           <ambientLight color={"white"} intensity={1}/>
