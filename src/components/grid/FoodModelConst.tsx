@@ -109,22 +109,12 @@ export const PlateInfo = {
     "PLATE" : {
         redSrc: RED_BOWL,
         blueSrc: BLUE_BOWL,
-        scaleX: 0.15,
-        scaleZ: 0.09,
-        scaleY: 0.2,
-        yOffset: 0.07,
-        placeOffset: 0.2,
-        rotation: 0
+        yOffset: -0.1,
     },
     "PAN" : {
         redSrc: PAN,
         blueSrc: PAN,
-        scaleX: 0.15,
-        scaleZ: 0.09,
-        scaleY: 0.2,
-        yOffset: 0.1,
-        placeOffset: 0.2,
-        rotation: 0
+        yOffset: -0.1,
     }
 }
 

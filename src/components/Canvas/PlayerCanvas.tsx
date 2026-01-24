@@ -8,6 +8,7 @@ import { Canvas } from '@react-three/fiber';
 import { Suspense } from 'react';
 import MapTileModel from '../grid/MapTileModel';
 import FoodModel from '../grid/FoodModel';
+import FoodHolder from '../grid/FoodHolder';
 import "./PlayCanvas.css"
 
 interface CanvasType {
@@ -124,13 +125,15 @@ const PlayerCanvas = ({side} : CanvasType) => {
             <Suspense>
               {bots}
             </Suspense>
-            <Suspense>
+            {/* <Suspense>
               <FoodModel i={2} j={2} height={0} type='ONIONS' chopped={false} cookedStage={0}/>
               <FoodModel i={2} j={1} height={0} type='SAUCE' chopped={false} cookedStage={0}/>
               <FoodModel i={2} j={3} height={0} type='EGG' chopped={false} cookedStage={2}/>
               <FoodModel i={2} j={4} height={0} type='NOODLES' chopped={false} cookedStage={0}/>
               <FoodModel i={2} j={5} height={0} type='MEAT' chopped={false} cookedStage={2}/>
-            </Suspense>
+            </Suspense> */}
+            <FoodHolder i={1} j={2} type={"PLATE"} />
+            <FoodHolder i={1} j={2} type={"PAN"} />
           </group>
         </Canvas>
       </div>
