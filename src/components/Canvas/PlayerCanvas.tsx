@@ -94,7 +94,6 @@ const PlayerCanvas = ({side} : CanvasType) => {
     const tempArr: ReactNode[] = []
     // Getting bots from map
     for (let k = 0; k < turnInfo.bots.length; k++) {
-      console.log(turnInfo.bots[k])
       if (turnInfo.bots[k].map_team == side) {
           tempArr.push(
           (

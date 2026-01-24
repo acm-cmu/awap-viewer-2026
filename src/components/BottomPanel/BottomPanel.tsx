@@ -44,7 +44,6 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
   };
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    // console.log(event.target.value)
     handleTurnChange(parseInt(event.target.value))
   }
     
@@ -63,7 +62,7 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
       } else {
         actionContext.setIsPlaying(false);
       }
-    }, 50);
+    }, 200 * stateContext.speed);
 
     return () => clearTimeout(timeout);
   }, [stateContext.round, stateContext.isPlaying]);
@@ -74,6 +73,16 @@ const BottomPanel = ({togglePage} : TogglePageType) => {
         <>
           <div className="container-grid">
             <div className="container-left">
+              <select name="speed" id="speed" 
+                onChange={(event) => actionContext.setSpeed(parseFloat(event.target.value))}>
+                <option value="0.1">Speed: 10.0x</option>
+                <option value="0.2">Speed: 5.0x</option>
+                <option value="0.5">Speed: 2.0x</option>
+                <option value="1.0" selected>Speed: 1.0x</option>
+                <option value="2.0">Speed: 0.5x</option>
+                <option value="4.0">Speed: 0.25x</option>
+                <option value="10.0">Speed: 0.01x</option>
+              </select>
               <button onClick={() => actionContext.setIsPlaying(!stateContext.isPlaying)}>
                 {stateContext.isPlaying ? "Stop" : "Play"}
               </button>
