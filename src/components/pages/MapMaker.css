@@ -1,9 +1,10 @@
 /* Map Tiles */
 .TileDisplay {
     display: grid;
-    width: 50vw;
+    width: 40vw;
     height: 50vh;
     margin: 20px;
+    overflow: scroll;
 }
 
 .mapTile {
@@ -61,10 +62,10 @@
 /* 3D Preview */
 .preview {
     width: 50vw;
-    height: 100vh;
+    height: 80vh;
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
 }
 
 .preview canvas {
@@ -84,6 +85,48 @@
     justify-content: center;
 }
 
+/* Inputs */
 input {
-    margin-right: 10px;;
+    margin-right: 10px;
+}
+
+input[type="text"] {
+    width: 60%;
+}
+
+/* Orders */
+.order-container {
+    position: absolute;
+    height: 20vh;
+    width: 50vw;
+    top: 0;
+    left: 0;
+    background-color: black;
+    display: flex;
+    overflow: scroll;
+}
+
+.order {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font: x-small;
+    justify-content: center;
+    background-color: rgb(255, 111, 135);
+    padding: 10px;
+    margin: 10px;
+}
+
+.order span {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 111, 135);
+}
+
+.delete-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: large;
+    background: none;
 }
