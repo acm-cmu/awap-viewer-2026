@@ -15,9 +15,9 @@
 }
 
 .container-grid {
+    width: 85%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    margin: 0 7.5%;
 }
 
 .container-center {
@@ -89,12 +89,12 @@ button {
 .slider {
   -webkit-appearance: none;
   appearance: none;
-  width: 85%;
+  width: 85vw;
   height: 20px;
   border-radius: 20px;  
   background: #808080;
   outline: rgba(244, 243, 243, 0.6) 1px solid;
-  margin: 15px;
+  margin-top: 20px;
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
