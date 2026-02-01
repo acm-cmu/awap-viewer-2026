@@ -33,7 +33,7 @@ const Viewer = ({togglePage} : TogglePageType) => {
   const [replay, setReplay] = useState<Replay | null>(null);
   const [round, setRound] = useState<number>(0);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [speed, setSpeed] = useState<number>(1.0);
+  const [speed, setSpeed] = useState<number>(5.0);
   const [showCreditScreen, setShowCreditScreen] = useState<boolean>(false);
 
   const redPercentage = useMemo(() => {
