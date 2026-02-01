@@ -5,9 +5,6 @@ import BottomPanel from '../BottomPanel/BottomPanel';
 import PlayerCanvas from '../Canvas/PlayerCanvas';
 import TopStats from '../TopStats/TopStats';
 import CreditScreen from './CreditScreen';
-import WinnerRedImage from '../../assets/images/WINNER_RED.png';
-import WinnerBlueImage from '../../assets/images/WINNER_BLUE.png';
-
 interface TogglePageType {
   togglePage: () => void
 }
@@ -64,10 +61,7 @@ const Viewer = ({togglePage} : TogglePageType) => {
                   </div>
                   
               </div>
-              <img className={`winner ${replay.winner}`} 
-                    src = {replay.winner == "RED" ? 
-                        WinnerRedImage : WinnerBlueImage} 
-                    alt = "Winner Image" />
+
               <div className='vertical-bar left'><div className='top' style={{height: `${redPercentage}%`}}></div></div>
               <div className='vertical-bar right'><div className='top' style={{height: `${redPercentage}%`}}></div></div>
             </>
